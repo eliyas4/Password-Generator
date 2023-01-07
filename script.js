@@ -99,14 +99,28 @@ function getPasswordOptions() {
   let userLength = prompt('How many characters would you like your password to be?')
 
   if (userLength < 10 || userLength > 64) {
-    alert('Please Pick a length between 10 and 64')
-    getPasswordOptions()
+    alert('Please pick a length between 10 and 64')
+    getPasswordOptions();
   }
   else {
     userLength = userLength 
   }
 }
 
+let characterChoices = {
+  upperCase: confirm('Would you like your password to contain uppercase characters?'),
+  numericChar: confirm('Would you like your password to contain numbers'),
+  specialChar: confirm('Would you like your password to contain special characters?'),
+  lowerCase: confirm('Would you like your password to contain lowercase characters?'),
+}
+
+if (characterChoices.upperCase == false &&
+  characterChoices.numericChar == false &&
+  characterChoices.specialChar == false &&
+  characterChoices.lowerCase == false) {
+  alert('Please select one type of character')
+  getPasswordOptions();
+}
 
 
 // Function for getting a random element from an array
