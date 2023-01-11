@@ -139,8 +139,6 @@ function arrayGenerator() {
   for (let i = 0; i < confirmCharacterArray.length; i++) {
     if (i == 0) {
       if (confirmCharacterArray[i] == false) {
-    
-        //console.log(allCharacters)
         selectedCharacters = allCharacters.filter(function (item) { 
           return characterArray[i].indexOf(item) == -1;  
         });       
@@ -155,9 +153,7 @@ function arrayGenerator() {
       });    
     } 
   }
-console.log(selectedCharacters)
 }
-
 
 // Function for getting a random element from an array
 function getRandom(arr) {
