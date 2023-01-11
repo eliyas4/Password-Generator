@@ -87,26 +87,13 @@ let upperCasedCharacters = [
   'Y',
   'Z'
 ];
-
-
-
-
-
 getPasswordOptions();
 arrayGenerator();
 getRandom(selectedCharacters);
 
 
-
 // Function to prompt user for password options
-
-
-
-
-
-
 function getPasswordOptions() {
-
   userLength = prompt('How many characters would you like your password to be?')
 
   if (userLength < 10 || userLength > 64) {
@@ -117,14 +104,12 @@ function getPasswordOptions() {
     userLength = userLength 
   }
 
-
   confirmCharacter = {
     upperCase: confirm('Would you like your password to contain uppercase characters?'),
     numericChar: confirm('Would you like your password to contain numbers'),
     specialChar: confirm('Would you like your password to contain special characters?'),
     lowerCase: confirm('Would you like your password to contain lowercase characters?'),
   }
-
   confirmCharacterArray = [
     confirmCharacter.upperCase,
     confirmCharacter.numericChar,
@@ -139,13 +124,11 @@ function getPasswordOptions() {
     alert('Please select one type of character')
     getPasswordOptions();
   }
-
 }
 
 // Function for forming an array to randomly pick from
 function arrayGenerator() {
   let allCharacters = upperCasedCharacters.concat(numericCharacters, specialCharacters, lowerCasedCharacters)
-
   let characterArray = [
     upperCasedCharacters,
     numericCharacters,
@@ -178,27 +161,18 @@ console.log(selectedCharacters)
 
 // Function for getting a random element from an array
 function getRandom(arr) {
-  for (let i = 0; i < userLength; i++) {
-    let randomCharacter = Math.floor(Math.random() * arr.length)
-    console.log(randomCharacter)  
-  }
+  let randomCharacterLocation = Math.floor(Math.random() * arr.length)
+  let randomCharacter = selectedCharacters[randomCharacterLocation]
+  return String(randomCharacter)  
 }
 
 // Function to generate password with user input
 function generatePassword() {
-
-
   let practicePassword = "";
-  for (let i = 0; i < 100; i++) {
-  
-   practicePassword += "j"
-  
+  for (let i = 0; i < userLength; i++) { 
+   practicePassword += getRandom(selectedCharacters)
   }
-
-
-
   return practicePassword;
-
 }
 
 // Get references to the #generate element

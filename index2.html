@@ -1,17 +1,8 @@
-let characterChoices = {
-    upperCase: confirm('Would you like your password to contain uppercase characters?'),
-    numericChar: confirm('Would you like your password to contain numbers'),
-    specialChar: confirm('Would you like your password to contain special characters?'),
-    lowerCase: confirm('Would you like your password to contain lowercase characters?'),
-  }
+for (let i = 0; i < userLength; i++) {
+  let randomCharacterLocation = Math.floor(Math.random() * arr.length)
+  let randomCharacter = selectedCharacters[randomCharacterLocation]
+  console.log(randomCharacter)  
 
-  if (characterChoices.upperCase == false &&
-    characterChoices.numericChar == false &&
-    characterChoices.specialChar == false &&
-    characterChoices.lowerCase == false) {
-    alert('Please select one type of character')
-    getPasswordOptions();
-  }
-  else {
-    
-  }
+  
+}
+}
