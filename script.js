@@ -89,7 +89,6 @@ let upperCasedCharacters = [
 ];
 getPasswordOptions();
 arrayGenerator();
-getRandom(selectedCharacters);
 
 
 // Function to prompt user for password options
