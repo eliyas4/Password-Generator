@@ -99,6 +99,8 @@ function getPasswordOptions() {
   if (userLength < 10 || userLength > 64) {
     alert('Please pick a length between 10 and 64')
     getPasswordOptions();
+    return
+    
   }
   else {
     userLength = userLength 
@@ -123,6 +125,7 @@ function getPasswordOptions() {
     confirmCharacter.lowerCase == false) {
     alert('Please select one type of character')
     getPasswordOptions();
+    return
   }
 }
 
